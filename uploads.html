@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+
+            background-repeat: no-repeat;
+            background-size: cover;
+             background-color: #FFDAB9;
+        }
+    h1 {
+        text-align: center;
+    }
+
+    .image-container img {
+       width: 100px;
+       height: 100px;
+       border: 1px solid black;
+       margin: 20px;
+       display: inline-block;
+       overflow: hidden;
+}
+        .form-container {
+            margin: 10px;
+            padding: 20px;
+            display: inline-block;
+            vertical-align: top;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+<h1>PEANUT SMUT DETECTION SYSTEM</h1>
+
+    <h2>upload collected images one after other and click on predict to see result </h2>
+
+    <div class="form-container">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <div class="image-container">
+                <input type="file" name="image1" onchange="previewImage(event)">
+                <img id="image1-preview">
+            </div>
+
+            <input type="submit" value="Predict Image1">
+
+        </form>
+    </div>
+
+    <div class="form-container">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <div class="image-container">
+                <input type="file" name="image2" onchange="previewImage(event)">
+                <img id="image2-preview">
+            </div>
+            <input type="submit" value="Predict Image 2">
+        </form>
+    </div>
+       <div class="form-container">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <div class="image-container">
+                <input type="file" name="image3" onchange="previewImage(event)">
+                <img id="image3-preview">
+            </div>
+            <input type="submit" value="Predict Image 3">
+        </form>
+    </div>
+       <div class="form-container">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <div class="image-container">
+                <input type="file" name="image4" onchange="previewImage(event)">
+                <img id="image4-preview">
+            </div>
+            <input type="submit" value="Predict Image 4">
+        </form>
+    </div>
+       <div class="form-container">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <div class="image-container">
+                <input type="file" name="image5" onchange="previewImage(event)">
+                <img id="image5-preview">
+            </div>
+            <input type="submit" value="Predict Image 5">
+        </form>
+    </div>
+       <div class="form-container">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <div class="image-container">
+                <input type="file" name="image6" onchange="previewImage(event)">
+                <img id="image6-preview">
+            </div>
+            <input type="submit" value="Predict Image 6">
+        </form>
+    </div>
+       <div class="form-container">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <div class="image-container">
+                <input type="file" name="image7" onchange="previewImage(event)">
+                <img id="image7-preview">
+            </div>
+            <input type="submit" value="Predict Image 7">
+        </form>
+    </div>
+       <div class="form-container">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <div class="image-container">
+                <input type="file" name="image8" onchange="previewImage(event)">
+                <img id="image8-preview">
+            </div>
+            <input type="submit" value="Predict Image 8">
+        </form>
+    </div>
+       <div class="form-container">
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <div class="image-container">
+                <input type="file" name="image9" onchange="previewImage(event)">
+                <img id="image9-preview">
+            </div>
+            <input type="submit" value="Predict Image 9">
+        </form>
+    </div>
+
+    <!-- Add more forms for additional images -->
+
+    <script>
+        function previewImage(event) {
+            var image = event.target.files[0];
+            var imagePreviewId = event.target.parentNode.querySelector("img").id;
+            var imagePreview = document.getElementById(imagePreviewId);
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                imagePreview.src = event.target.result;
+            }
+            reader.readAsDataURL(image);
+        }
+    </script>
+</body>
+</html>
